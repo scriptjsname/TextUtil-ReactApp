@@ -70,7 +70,12 @@ const TextForm = (props) => {
       <div className="contaner my-3">
         <h2>Your text Summery</h2>
         <p>
-          {text.split(" ").length} words {text.length} characters{" "}
+          {
+            text.split(" ").filter((element) => {
+              return element.length != 0;
+            }).length
+          }{" "}
+          words {text.length} characters{" "}
         </p>
         <p>{0.008 * text.split(" ").length} Minutes to read</p>
         <h2>Preview of your Text</h2>
